@@ -51,6 +51,11 @@ export const Location = styled.button`
 `
 export const CartContainer = styled.div<{ scroll: boolean }>`
   position: ${(props) => (props.scroll ? 'fixed' : 'relative')};
+  top: ${(props) => (props.scroll ? '1rem' : '0')};
+  @media (min-width: 71rem) {
+    right: ${(props) =>
+    props.scroll ? 'calc((100vw - 71.25rem) / 2 - 2rem)' : '0'};
+  }
 `
 export const Cart = styled.button`
   background-color: #f1e9c9;

@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useReducer } from 'react'
+import { createContext, ReactNode, useEffect, useReducer } from 'react'
 import { CoffeeProps, coffeesReducer } from '../reducers/coffeeList/reducer.ts'
 
 import coffeeImage01 from '../assets/expresso.png'
@@ -164,7 +164,27 @@ export function CoffeesContextProvider({
   const [coffeesState, dispatch] = useReducer(
     coffeesReducer,
     permanentCoffeeList,
+    () => {
+      const storedStateAsJSON = localStorage.getItem(
+        '@coffee-delivery-deluca:coffees-state-1.0.0',
+      )
+
+      if (storedStateAsJSON) {
+        return JSON.parse(storedStateAsJSON)
+      } else {
+        return permanentCoffeeList
+      }
+    },
   )
+
+  useEffect(() => {
+    const stateJSON = JSON.stringify(coffeesState)
+    console.log(stateJSON)
+    localStorage.setItem(
+      '@coffee-delivery-deluca:coffees-state-1.0.0',
+      stateJSON,
+    )
+  }, [coffeesState])
 
   const selectedCoffees = coffeesState.filter((coffee) => {
     return coffee.value > 0
