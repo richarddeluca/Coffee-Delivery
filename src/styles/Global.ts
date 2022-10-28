@@ -17,8 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   :focus {
-    /* outline: 0;
-    box-shadow: 0px 0px 4px 2px green; */
+    outline: 0;
+    box-shadow: 0px 0px 3px 1px ${(props) => props.theme['purple-dark']};
     }
   
 
@@ -30,8 +30,27 @@ export const GlobalStyle = createGlobalStyle`
   
   a{}
   
+  body{
+    font-family: Roboto, Inter, Avenir, Helvetica, Arial, sans-serif;
+    background-color: ${(props) => props.theme['background-']}
+  }
   button {
   cursor: pointer;
 }
 
+h1, h2, h3 {
+  font-family: 'Baloo 2', Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+
+h1{
+  color: ${(props) => props.theme['base-title']}
+}
+
+h2, h3{
+  color: ${(props) => props.theme['base-subtitle']}
+}
+
+p, span{
+  color: ${(props) => props.theme['base-text']}
+}
 `
