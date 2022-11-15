@@ -7,10 +7,12 @@ import {
   InformationTexts,
   Text,
 } from './styles'
+import illustration from '../../assets/illustration.png'
 
 export function SuccessPage() {
   return (
     <HeroContainer>
+      <div className="bg-img" />
       <HeroContent>
         <Intro>
           <div>
@@ -56,7 +58,10 @@ export function SuccessPage() {
             </Text>
           </InformationTexts>
         </Intro>
-        <IntroImage src="src/assets/Illustration.svg" />
+        <IntroImage
+          alt="ilustração: pessoa dirigindo uma moto com uma caixa de transporte na parte de trás. Estampada na caixa está logo do Coffee Delivery"
+          src={illustration}
+        />
       </HeroContent>
     </HeroContainer>
   )

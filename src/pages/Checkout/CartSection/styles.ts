@@ -99,6 +99,9 @@ export const ConfirmButton = styled.button`
 
   font-size: 0.875rem;
   font-weight: 700;
+  &:hover {
+    opacity: 0.8;
+  }
 `
 
 export const CounterStyle = styled.div`
@@ -115,11 +118,12 @@ export const CounterStyle = styled.div`
 
   svg {
     color: ${(props) => props.theme['purple-']};
+    cursor: pointer;
   }
 `
 export const RemoveButton = styled.div`
   padding: 0.375rem 0.5rem;
-
+  cursor: pointer;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -134,5 +138,9 @@ export const RemoveButton = styled.div`
 
   span {
     font-size: 0.75rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
   }
 `

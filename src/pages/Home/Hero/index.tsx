@@ -7,6 +7,7 @@ import {
   HeroContent,
   Item,
 } from './styles'
+import coffeeImage from '../../../assets/imagem.png'
 
 export function Hero() {
   return (
@@ -48,7 +49,10 @@ export function Hero() {
             </Item>
           </Items>
         </Intro>
-        <IntroImage src="src/assets/Imagem.svg" />
+        <IntroImage
+          alt="Sementes variadas de café e copo comercial de café. Coffee Delivery escrito no rótulo"
+          src={coffeeImage}
+        />
       </HeroContent>
     </HeroContainer>
   )

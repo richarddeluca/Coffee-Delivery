@@ -8,6 +8,7 @@ import {
   CoffeeNumberBox,
   CartContainer,
 } from './styles'
+import logo from '../../assets/logo.png'
 
 import { ShoppingCart, MapPin } from 'phosphor-react'
 import { NavLink } from 'react-router-dom'
@@ -45,7 +46,7 @@ export function Header() {
       <HeaderContent>
         <NavLink to="/">
           <Logo>
-            <img src="src/assets/Logo.svg" alt="" />
+            <img src={logo} alt="" />
           </Logo>
         </NavLink>
         <HeaderActions>

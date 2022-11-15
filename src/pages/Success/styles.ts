@@ -1,11 +1,20 @@
 import styled from 'styled-components'
 
 export const HeroContainer = styled.section`
+  position: relative;
   margin: 0 auto;
   width: 100%;
-  background-image: url('src/assets/Background.png');
-  background-repeat: no-repeat;
-  background-position: center center;
+
+  .bg-img {
+    position: absolute;
+    left: calc((100vw - 1140px) / 2 * -1);
+    width: 100vw;
+    height: 100%;
+    background-image: url('src/assets/Background.png');
+    background-size: 120% 400px;
+    background-repeat: repeat;
+    background-position: center center;
+  }
 `
 export const HeroContent = styled.div`
   display: flex;
